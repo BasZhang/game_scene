@@ -9,7 +9,9 @@ import java.util.concurrent.TimeUnit;
 
 import com.google.protobuf.Message;
 
-import zorg.game_scene.cmd.Commend;
+import zorg.game_scene.cmd.CommendExpression;
+import zorg.game_scene.cmd.FlatCommendExpression;
+import zorg.game_scene.def.GamePlayer;
 import zorg.game_scene.def.Scene;
 
 public class TickWorker implements Runnable {
@@ -41,18 +43,23 @@ public class TickWorker implements Runnable {
 			pusher.push(outgoingAction);
 		}
 
-		List<Commend> returnCmds = new ArrayList<>();
+		List<CommendExpression> returnCmds = new ArrayList<>();
 		ActionData incomingAction = null;
 		while ((incomingAction = jobGroup.pollFromReceivings()) != null) {
-			Collection<Commend> cmds = cmdWorker.doAction(incomingAction, sceneData);
+			Collection<CommendExpression> cmds = cmdWorker.doAction(incomingAction, sceneData);
 			returnCmds.addAll(cmds);
 		}
-		CommendMerger commendMerger = new CommendMerger();
-		List<Commend> mergedCmds = commendMerger.merge(returnCmds);
+
+		CommendSimplifyWorker commendMerger = new CommendSimplifyWorker();
+		List<FlatCommendExpression> mergedCmds = commendMerger.simplify(returnCmds);
+
 		CommendResultCache resultCache = new CommendResultCache();
-		for (Commend cmd : mergedCmds) {
-			Message message = resultCache.executed(cmd) ? resultCache.getLastResult(cmd) : resultCache.exec(cmd, sceneData);
-			jobGroup.addToSending(new ActionData(0, 0, message));
+		for (FlatCommendExpression fcmd : mergedCmds) {
+			List<GamePlayer> receiverPlayers = fcmd.getReceiverPlayers();
+			Message message = resultCache.executed(fcmd) ? resultCache.getLastResult(fcmd) : resultCache.exec(fcmd, sceneData);
+			for (GamePlayer gamePlayer : receiverPlayers) {
+				jobGroup.addToSending(new ActionData(gamePlayer.getId(), sceneData.getServerId(), message));
+			}
 		}
 	}
 }

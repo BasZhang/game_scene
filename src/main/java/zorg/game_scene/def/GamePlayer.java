@@ -2,13 +2,17 @@ package zorg.game_scene.def;
 
 import zorg.game_scene.proto.ProtoDefine.GamePlayerState;
 
+/**
+ * 游戏玩家
+ * 
+ * @author zhangbo
+ *
+ */
 public class GamePlayer extends ChangableSceneItem<GamePlayerState, GamePlayerState> {
-
-	protected boolean changed = false;
 
 	protected int x = -1;
 	protected int y = -1;
-	
+
 	private long id;
 
 	@Override
@@ -22,23 +26,13 @@ public class GamePlayer extends ChangableSceneItem<GamePlayerState, GamePlayerSt
 	}
 
 	@Override
-	public boolean isChanged() {
-		return changed;
-	}
-
-	@Override
-	public void markAsUnchanged() {
-		changed = false;
-	}
-
-	@Override
 	protected String getItemPrefix() {
 		return "GamePlayer";
 	}
 
 	@Override
-	protected String getId() {
-		return String.valueOf(id);
+	public Long getId() {
+		return id;
 	}
 
 }

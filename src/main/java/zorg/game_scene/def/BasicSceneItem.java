@@ -1,7 +1,13 @@
 package zorg.game_scene.def;
 
+/**
+ * 游戏对象
+ * 
+ * @author zhangbo
+ *
+ */
 public abstract class BasicSceneItem implements UniqueSceneItem {
-	
+
 	@Override
 	public final String getSceneUniqId() {
 		return getItemPrefix() + "$" + getId();
@@ -9,7 +15,6 @@ public abstract class BasicSceneItem implements UniqueSceneItem {
 
 	protected abstract String getItemPrefix();
 
-	protected abstract String getId();
-
+	protected abstract Long getId();
 
 }

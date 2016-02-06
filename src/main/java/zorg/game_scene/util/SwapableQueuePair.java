@@ -6,6 +6,14 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+/**
+ * 一对队列
+ * 
+ * @author zhangbo
+ *
+ * @param <T>
+ *            元素泛型
+ */
 public class SwapableQueuePair<T> {
 
 	private volatile List<Queue<T>> queuePair = null;
@@ -18,14 +26,23 @@ public class SwapableQueuePair<T> {
 		this.queuePair = shortList;
 	}
 
+	/**
+	 * @return 取第一个队列。
+	 */
 	public Queue<T> first() {
 		return queuePair.get(0);
 	}
 
+	/**
+	 * @return 取第二个队列。
+	 */
 	public Queue<T> second() {
 		return queuePair.get(1);
 	}
 
+	/**
+	 * 两个队列交换。
+	 */
 	public void swap() {
 		Collections.swap(queuePair, 0, 1);
 	}

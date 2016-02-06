@@ -5,8 +5,14 @@ import java.util.Map;
 
 import zorg.game_scene.proto.ProtoDefine.SceneState;
 
+/**
+ * 地图格，包含若干个游戏对象。
+ * 
+ * @author zhangbo
+ *
+ */
 public class Tile implements Changable<SceneState, SceneState> {
-
+	/** 格中的玩家 */
 	protected Map<Object, GamePlayer> players = new HashMap<>();
 
 	@Override

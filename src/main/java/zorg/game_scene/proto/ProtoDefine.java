@@ -2,7 +2,7 @@
 // source: ProtoDefine.proto
 
 package zorg.game_scene.proto;
-@SuppressWarnings("all")
+
 public final class ProtoDefine {
   private ProtoDefine() {}
   public static void registerAllExtensions(

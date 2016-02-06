@@ -5,28 +5,28 @@ import java.util.Map;
 
 import com.google.protobuf.Message;
 
-import zorg.game_scene.cmd.Commend;
+import zorg.game_scene.cmd.CommendExpression;
 import zorg.game_scene.def.Scene;
 
 public class CommendResultCache {
 
 	Map<String, Message> cache = new HashMap<>();
 
-	public boolean executed(Commend cmd) {
+	public boolean executed(CommendExpression cmd) {
 		return cache.containsKey(uniqueKey(cmd));
 	}
 
-	public Message getLastResult(Commend cmd) {
+	public Message getLastResult(CommendExpression cmd) {
 		return cache.get(uniqueKey(cmd));
 	}
 
-	public Message exec(Commend cmd, Scene sceneData) {
-		Message message = cmd.exec(sceneData);
+	public Message exec(CommendExpression cmd, Scene sceneData) {
+		Message message = cmd.genMsg(sceneData);
 		cache.put(uniqueKey(cmd), message);
 		return message;
 	}
 
-	private String uniqueKey(Commend cmd) {
+	private String uniqueKey(CommendExpression cmd) {
 		return cmd.getVisionType() + "&" + cmd.getStateType();
 	}
 
