@@ -1,9 +1,5 @@
 package zorg.game_scene.cmd;
 
-import com.google.protobuf.Message;
-
-import zorg.game_scene.def.Scene;
-
 /**
  * 执行的指令
  * <p>
@@ -21,17 +17,6 @@ public class CommendExpression {
 	protected StateType stateType;
 	/** 发给者类型 */
 	protected SendTargetType receiverType;
-
-	/**
-	 * 生成需要发送的状态信息。
-	 * 
-	 * @param sceneData
-	 *            场景数据
-	 * @return 状态消息。
-	 */
-	public Message genMsg(Scene sceneData) {
-		return null;
-	}
 
 	public VisionTargetType getVisionType() {
 		return visionType;

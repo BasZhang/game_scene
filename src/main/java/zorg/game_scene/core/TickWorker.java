@@ -53,7 +53,7 @@ public class TickWorker implements Runnable {
 		CommendSimplifyWorker commendMerger = new CommendSimplifyWorker();
 		List<FlatCommendExpression> mergedCmds = commendMerger.simplify(returnCmds);
 
-		CommendResultCache resultCache = new CommendResultCache();
+		MessageCache resultCache = new MessageCache();
 		for (FlatCommendExpression fcmd : mergedCmds) {
 			List<GamePlayer> receiverPlayers = fcmd.getReceiverPlayers();
 			Message message = resultCache.executed(fcmd) ? resultCache.getLastResult(fcmd) : resultCache.exec(fcmd, sceneData);

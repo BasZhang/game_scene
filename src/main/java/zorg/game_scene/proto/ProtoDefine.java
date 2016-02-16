@@ -469,6 +469,19 @@ public final class ProtoDefine {
      */
     zorg.game_scene.proto.ProtoDefine.GamePlayerStateOrBuilder getPlayerStatesOrBuilder(
         int index);
+
+    /**
+     * <code>repeated int64 disappearingPlayers = 2;</code>
+     */
+    java.util.List<java.lang.Long> getDisappearingPlayersList();
+    /**
+     * <code>repeated int64 disappearingPlayers = 2;</code>
+     */
+    int getDisappearingPlayersCount();
+    /**
+     * <code>repeated int64 disappearingPlayers = 2;</code>
+     */
+    long getDisappearingPlayers(int index);
   }
   /**
    * Protobuf type {@code zorg.game_scene.proto.SceneState}
@@ -483,6 +496,7 @@ public final class ProtoDefine {
     }
     private SceneState() {
       playerStates_ = java.util.Collections.emptyList();
+      disappearingPlayers_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -517,6 +531,27 @@ public final class ProtoDefine {
               playerStates_.add(input.readMessage(zorg.game_scene.proto.ProtoDefine.GamePlayerState.parser(), extensionRegistry));
               break;
             }
+            case 16: {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                disappearingPlayers_ = new java.util.ArrayList<java.lang.Long>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              disappearingPlayers_.add(input.readInt64());
+              break;
+            }
+            case 18: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002) && input.getBytesUntilLimit() > 0) {
+                disappearingPlayers_ = new java.util.ArrayList<java.lang.Long>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                disappearingPlayers_.add(input.readInt64());
+              }
+              input.popLimit(limit);
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -528,6 +563,9 @@ public final class ProtoDefine {
       } finally {
         if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
           playerStates_ = java.util.Collections.unmodifiableList(playerStates_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          disappearingPlayers_ = java.util.Collections.unmodifiableList(disappearingPlayers_);
         }
         makeExtensionsImmutable();
       }
@@ -579,6 +617,29 @@ public final class ProtoDefine {
       return playerStates_.get(index);
     }
 
+    public static final int DISAPPEARINGPLAYERS_FIELD_NUMBER = 2;
+    private java.util.List<java.lang.Long> disappearingPlayers_;
+    /**
+     * <code>repeated int64 disappearingPlayers = 2;</code>
+     */
+    public java.util.List<java.lang.Long>
+        getDisappearingPlayersList() {
+      return disappearingPlayers_;
+    }
+    /**
+     * <code>repeated int64 disappearingPlayers = 2;</code>
+     */
+    public int getDisappearingPlayersCount() {
+      return disappearingPlayers_.size();
+    }
+    /**
+     * <code>repeated int64 disappearingPlayers = 2;</code>
+     */
+    public long getDisappearingPlayers(int index) {
+      return disappearingPlayers_.get(index);
+    }
+    private int disappearingPlayersMemoizedSerializedSize = -1;
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -591,8 +652,16 @@ public final class ProtoDefine {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      getSerializedSize();
       for (int i = 0; i < playerStates_.size(); i++) {
         output.writeMessage(1, playerStates_.get(i));
+      }
+      if (getDisappearingPlayersList().size() > 0) {
+        output.writeRawVarint32(18);
+        output.writeRawVarint32(disappearingPlayersMemoizedSerializedSize);
+      }
+      for (int i = 0; i < disappearingPlayers_.size(); i++) {
+        output.writeInt64NoTag(disappearingPlayers_.get(i));
       }
     }
 
@@ -604,6 +673,20 @@ public final class ProtoDefine {
       for (int i = 0; i < playerStates_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, playerStates_.get(i));
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < disappearingPlayers_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeInt64SizeNoTag(disappearingPlayers_.get(i));
+        }
+        size += dataSize;
+        if (!getDisappearingPlayersList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        disappearingPlayersMemoizedSerializedSize = dataSize;
       }
       memoizedSize = size;
       return size;
@@ -723,6 +806,8 @@ public final class ProtoDefine {
         } else {
           playerStatesBuilder_.clear();
         }
+        disappearingPlayers_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -755,6 +840,11 @@ public final class ProtoDefine {
         } else {
           result.playerStates_ = playerStatesBuilder_.build();
         }
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          disappearingPlayers_ = java.util.Collections.unmodifiableList(disappearingPlayers_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.disappearingPlayers_ = disappearingPlayers_;
         onBuilt();
         return result;
       }
@@ -795,6 +885,16 @@ public final class ProtoDefine {
               playerStatesBuilder_.addAllMessages(other.playerStates_);
             }
           }
+        }
+        if (!other.disappearingPlayers_.isEmpty()) {
+          if (disappearingPlayers_.isEmpty()) {
+            disappearingPlayers_ = other.disappearingPlayers_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureDisappearingPlayersIsMutable();
+            disappearingPlayers_.addAll(other.disappearingPlayers_);
+          }
+          onChanged();
         }
         onChanged();
         return this;
@@ -1062,6 +1162,72 @@ public final class ProtoDefine {
         }
         return playerStatesBuilder_;
       }
+
+      private java.util.List<java.lang.Long> disappearingPlayers_ = java.util.Collections.emptyList();
+      private void ensureDisappearingPlayersIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          disappearingPlayers_ = new java.util.ArrayList<java.lang.Long>(disappearingPlayers_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <code>repeated int64 disappearingPlayers = 2;</code>
+       */
+      public java.util.List<java.lang.Long>
+          getDisappearingPlayersList() {
+        return java.util.Collections.unmodifiableList(disappearingPlayers_);
+      }
+      /**
+       * <code>repeated int64 disappearingPlayers = 2;</code>
+       */
+      public int getDisappearingPlayersCount() {
+        return disappearingPlayers_.size();
+      }
+      /**
+       * <code>repeated int64 disappearingPlayers = 2;</code>
+       */
+      public long getDisappearingPlayers(int index) {
+        return disappearingPlayers_.get(index);
+      }
+      /**
+       * <code>repeated int64 disappearingPlayers = 2;</code>
+       */
+      public Builder setDisappearingPlayers(
+          int index, long value) {
+        ensureDisappearingPlayersIsMutable();
+        disappearingPlayers_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int64 disappearingPlayers = 2;</code>
+       */
+      public Builder addDisappearingPlayers(long value) {
+        ensureDisappearingPlayersIsMutable();
+        disappearingPlayers_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int64 disappearingPlayers = 2;</code>
+       */
+      public Builder addAllDisappearingPlayers(
+          java.lang.Iterable<? extends java.lang.Long> values) {
+        ensureDisappearingPlayersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, disappearingPlayers_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int64 disappearingPlayers = 2;</code>
+       */
+      public Builder clearDisappearingPlayers() {
+        disappearingPlayers_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1141,9 +1307,9 @@ public final class ProtoDefine {
     java.lang.String[] descriptorData = {
       "\n\021ProtoDefine.proto\022\025zorg.game_scene.pro" +
       "to\"\'\n\017GamePlayerState\022\t\n\001x\030\001 \001(\005\022\t\n\001y\030\002 " +
-      "\001(\005\"J\n\nSceneState\022<\n\014playerStates\030\001 \003(\0132" +
-      "&.zorg.game_scene.proto.GamePlayerStateb" +
-      "\006proto3"
+      "\001(\005\"g\n\nSceneState\022<\n\014playerStates\030\001 \003(\0132" +
+      "&.zorg.game_scene.proto.GamePlayerState\022" +
+      "\033\n\023disappearingPlayers\030\002 \003(\003b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1168,7 +1334,7 @@ public final class ProtoDefine {
     internal_static_zorg_game_scene_proto_SceneState_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_zorg_game_scene_proto_SceneState_descriptor,
-        new java.lang.String[] { "PlayerStates", });
+        new java.lang.String[] { "PlayerStates", "DisappearingPlayers", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

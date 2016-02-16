@@ -9,4 +9,5 @@ message GamePlayerState {
 
 message SceneState {
   repeated GamePlayerState playerStates = 1;
+  repeated int64 disappearingPlayers = 2;
 }

@@ -1,6 +1,9 @@
 package zorg.game_scene.def;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import zorg.game_scene.proto.ProtoDefine.SceneState;
@@ -11,9 +14,11 @@ import zorg.game_scene.proto.ProtoDefine.SceneState;
  * @author zhangbo
  *
  */
-public class Tile implements Changable<SceneState, SceneState> {
+public class Tile implements Changable<SceneState, SceneState>, SceneItemContainer {
 	/** 格中的玩家 */
 	protected Map<Object, GamePlayer> players = new HashMap<>();
+	/** 消失的影子 */
+	protected List<GamePlayer> disappearing = new ArrayList<>();
 
 	@Override
 	public SceneState getChangedState() {
@@ -23,6 +28,9 @@ public class Tile implements Changable<SceneState, SceneState> {
 				changeStateBuilder.addPlayerStates(child.getChangedState());
 			}
 		}
+		for (GamePlayer gamePlayer : disappearing) {
+			changeStateBuilder.addDisappearingPlayers(gamePlayer.getId());
+		}
 		return changeStateBuilder.build();
 	}
 
@@ -31,6 +39,9 @@ public class Tile implements Changable<SceneState, SceneState> {
 		SceneState.Builder finalStateBuilder = SceneState.newBuilder();
 		for (GamePlayer child : players.values()) {
 			finalStateBuilder.addPlayerStates(child.getChangedState());
+		}
+		for (GamePlayer gamePlayer : disappearing) {
+			finalStateBuilder.addDisappearingPlayers(gamePlayer.getId());
 		}
 		return finalStateBuilder.build();
 	}
@@ -42,6 +53,9 @@ public class Tile implements Changable<SceneState, SceneState> {
 				return true;
 			}
 		}
+		if (!disappearing.isEmpty()) {
+			return true;
+		}
 		return false;
 	}
 
@@ -50,6 +64,17 @@ public class Tile implements Changable<SceneState, SceneState> {
 		for (GamePlayer child : players.values()) {
 			child.markAsUnchanged();
 		}
+		disappearing.clear();
+	}
+
+	@Override
+	public BasicSceneItem getItem(String sceneUniqId) {
+		GamePlayer gamePlayer = players.get(sceneUniqId);
+		return gamePlayer;
+	}
+
+	public Collection<GamePlayer> getGamePlayers() {
+		return new ArrayList<>(players.values());
 	}
 
 }

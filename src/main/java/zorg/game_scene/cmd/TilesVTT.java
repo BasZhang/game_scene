@@ -19,4 +19,8 @@ public class TilesVTT extends VisionTargetType {
 		tiles.add(tile);
 	}
 
+	public List<Tile> getTiles() {
+		return tiles;
+	}
+
 }
