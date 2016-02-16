@@ -22,7 +22,7 @@ public class TickWorker implements Runnable {
 
 	protected PushWorker pusher;
 
-	protected ActionWorker cmdWorker;
+	protected ActionWorkers cmdWorker;
 
 	protected Scene sceneData;
 

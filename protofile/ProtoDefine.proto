@@ -11,3 +11,16 @@ message SceneState {
   repeated GamePlayerState playerStates = 1;
   repeated int64 disappearingPlayers = 2;
 }
+
+message EnterOperation {
+  int32 toPosX = 1;
+  int32 toPosY = 2;
+}
+
+message MoveOperation {
+  int32 toPosX = 1;
+  int32 toPosY = 2;
+}
+
+message LeaveOperation {
+}

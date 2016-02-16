@@ -1286,6 +1286,1189 @@ public final class ProtoDefine {
 
   }
 
+  public interface EnterOperationOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:zorg.game_scene.proto.EnterOperation)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional int32 toPosX = 1;</code>
+     */
+    int getToPosX();
+
+    /**
+     * <code>optional int32 toPosY = 2;</code>
+     */
+    int getToPosY();
+  }
+  /**
+   * Protobuf type {@code zorg.game_scene.proto.EnterOperation}
+   */
+  public  static final class EnterOperation extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:zorg.game_scene.proto.EnterOperation)
+      EnterOperationOrBuilder {
+    // Use EnterOperation.newBuilder() to construct.
+    private EnterOperation(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private EnterOperation() {
+      toPosX_ = 0;
+      toPosY_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private EnterOperation(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+
+              toPosX_ = input.readInt32();
+              break;
+            }
+            case 16: {
+
+              toPosY_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw new RuntimeException(e.setUnfinishedMessage(this));
+      } catch (java.io.IOException e) {
+        throw new RuntimeException(
+            new com.google.protobuf.InvalidProtocolBufferException(
+                e.getMessage()).setUnfinishedMessage(this));
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return zorg.game_scene.proto.ProtoDefine.internal_static_zorg_game_scene_proto_EnterOperation_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return zorg.game_scene.proto.ProtoDefine.internal_static_zorg_game_scene_proto_EnterOperation_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              zorg.game_scene.proto.ProtoDefine.EnterOperation.class, zorg.game_scene.proto.ProtoDefine.EnterOperation.Builder.class);
+    }
+
+    public static final int TOPOSX_FIELD_NUMBER = 1;
+    private int toPosX_;
+    /**
+     * <code>optional int32 toPosX = 1;</code>
+     */
+    public int getToPosX() {
+      return toPosX_;
+    }
+
+    public static final int TOPOSY_FIELD_NUMBER = 2;
+    private int toPosY_;
+    /**
+     * <code>optional int32 toPosY = 2;</code>
+     */
+    public int getToPosY() {
+      return toPosY_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (toPosX_ != 0) {
+        output.writeInt32(1, toPosX_);
+      }
+      if (toPosY_ != 0) {
+        output.writeInt32(2, toPosY_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (toPosX_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, toPosX_);
+      }
+      if (toPosY_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, toPosY_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    public static zorg.game_scene.proto.ProtoDefine.EnterOperation parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static zorg.game_scene.proto.ProtoDefine.EnterOperation parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static zorg.game_scene.proto.ProtoDefine.EnterOperation parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static zorg.game_scene.proto.ProtoDefine.EnterOperation parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static zorg.game_scene.proto.ProtoDefine.EnterOperation parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static zorg.game_scene.proto.ProtoDefine.EnterOperation parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static zorg.game_scene.proto.ProtoDefine.EnterOperation parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static zorg.game_scene.proto.ProtoDefine.EnterOperation parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static zorg.game_scene.proto.ProtoDefine.EnterOperation parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static zorg.game_scene.proto.ProtoDefine.EnterOperation parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(zorg.game_scene.proto.ProtoDefine.EnterOperation prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code zorg.game_scene.proto.EnterOperation}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:zorg.game_scene.proto.EnterOperation)
+        zorg.game_scene.proto.ProtoDefine.EnterOperationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return zorg.game_scene.proto.ProtoDefine.internal_static_zorg_game_scene_proto_EnterOperation_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return zorg.game_scene.proto.ProtoDefine.internal_static_zorg_game_scene_proto_EnterOperation_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                zorg.game_scene.proto.ProtoDefine.EnterOperation.class, zorg.game_scene.proto.ProtoDefine.EnterOperation.Builder.class);
+      }
+
+      // Construct using zorg.game_scene.proto.ProtoDefine.EnterOperation.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        toPosX_ = 0;
+
+        toPosY_ = 0;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return zorg.game_scene.proto.ProtoDefine.internal_static_zorg_game_scene_proto_EnterOperation_descriptor;
+      }
+
+      public zorg.game_scene.proto.ProtoDefine.EnterOperation getDefaultInstanceForType() {
+        return zorg.game_scene.proto.ProtoDefine.EnterOperation.getDefaultInstance();
+      }
+
+      public zorg.game_scene.proto.ProtoDefine.EnterOperation build() {
+        zorg.game_scene.proto.ProtoDefine.EnterOperation result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public zorg.game_scene.proto.ProtoDefine.EnterOperation buildPartial() {
+        zorg.game_scene.proto.ProtoDefine.EnterOperation result = new zorg.game_scene.proto.ProtoDefine.EnterOperation(this);
+        result.toPosX_ = toPosX_;
+        result.toPosY_ = toPosY_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof zorg.game_scene.proto.ProtoDefine.EnterOperation) {
+          return mergeFrom((zorg.game_scene.proto.ProtoDefine.EnterOperation)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(zorg.game_scene.proto.ProtoDefine.EnterOperation other) {
+        if (other == zorg.game_scene.proto.ProtoDefine.EnterOperation.getDefaultInstance()) return this;
+        if (other.getToPosX() != 0) {
+          setToPosX(other.getToPosX());
+        }
+        if (other.getToPosY() != 0) {
+          setToPosY(other.getToPosY());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        zorg.game_scene.proto.ProtoDefine.EnterOperation parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (zorg.game_scene.proto.ProtoDefine.EnterOperation) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int toPosX_ ;
+      /**
+       * <code>optional int32 toPosX = 1;</code>
+       */
+      public int getToPosX() {
+        return toPosX_;
+      }
+      /**
+       * <code>optional int32 toPosX = 1;</code>
+       */
+      public Builder setToPosX(int value) {
+        
+        toPosX_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 toPosX = 1;</code>
+       */
+      public Builder clearToPosX() {
+        
+        toPosX_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int toPosY_ ;
+      /**
+       * <code>optional int32 toPosY = 2;</code>
+       */
+      public int getToPosY() {
+        return toPosY_;
+      }
+      /**
+       * <code>optional int32 toPosY = 2;</code>
+       */
+      public Builder setToPosY(int value) {
+        
+        toPosY_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 toPosY = 2;</code>
+       */
+      public Builder clearToPosY() {
+        
+        toPosY_ = 0;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:zorg.game_scene.proto.EnterOperation)
+    }
+
+    // @@protoc_insertion_point(class_scope:zorg.game_scene.proto.EnterOperation)
+    private static final zorg.game_scene.proto.ProtoDefine.EnterOperation DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new zorg.game_scene.proto.ProtoDefine.EnterOperation();
+    }
+
+    public static zorg.game_scene.proto.ProtoDefine.EnterOperation getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<EnterOperation>
+        PARSER = new com.google.protobuf.AbstractParser<EnterOperation>() {
+      public EnterOperation parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        try {
+          return new EnterOperation(input, extensionRegistry);
+        } catch (RuntimeException e) {
+          if (e.getCause() instanceof
+              com.google.protobuf.InvalidProtocolBufferException) {
+            throw (com.google.protobuf.InvalidProtocolBufferException)
+                e.getCause();
+          }
+          throw e;
+        }
+      }
+    };
+
+    public static com.google.protobuf.Parser<EnterOperation> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<EnterOperation> getParserForType() {
+      return PARSER;
+    }
+
+    public zorg.game_scene.proto.ProtoDefine.EnterOperation getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface MoveOperationOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:zorg.game_scene.proto.MoveOperation)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional int32 toPosX = 1;</code>
+     */
+    int getToPosX();
+
+    /**
+     * <code>optional int32 toPosY = 2;</code>
+     */
+    int getToPosY();
+  }
+  /**
+   * Protobuf type {@code zorg.game_scene.proto.MoveOperation}
+   */
+  public  static final class MoveOperation extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:zorg.game_scene.proto.MoveOperation)
+      MoveOperationOrBuilder {
+    // Use MoveOperation.newBuilder() to construct.
+    private MoveOperation(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private MoveOperation() {
+      toPosX_ = 0;
+      toPosY_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private MoveOperation(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+
+              toPosX_ = input.readInt32();
+              break;
+            }
+            case 16: {
+
+              toPosY_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw new RuntimeException(e.setUnfinishedMessage(this));
+      } catch (java.io.IOException e) {
+        throw new RuntimeException(
+            new com.google.protobuf.InvalidProtocolBufferException(
+                e.getMessage()).setUnfinishedMessage(this));
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return zorg.game_scene.proto.ProtoDefine.internal_static_zorg_game_scene_proto_MoveOperation_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return zorg.game_scene.proto.ProtoDefine.internal_static_zorg_game_scene_proto_MoveOperation_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              zorg.game_scene.proto.ProtoDefine.MoveOperation.class, zorg.game_scene.proto.ProtoDefine.MoveOperation.Builder.class);
+    }
+
+    public static final int TOPOSX_FIELD_NUMBER = 1;
+    private int toPosX_;
+    /**
+     * <code>optional int32 toPosX = 1;</code>
+     */
+    public int getToPosX() {
+      return toPosX_;
+    }
+
+    public static final int TOPOSY_FIELD_NUMBER = 2;
+    private int toPosY_;
+    /**
+     * <code>optional int32 toPosY = 2;</code>
+     */
+    public int getToPosY() {
+      return toPosY_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (toPosX_ != 0) {
+        output.writeInt32(1, toPosX_);
+      }
+      if (toPosY_ != 0) {
+        output.writeInt32(2, toPosY_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (toPosX_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, toPosX_);
+      }
+      if (toPosY_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, toPosY_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    public static zorg.game_scene.proto.ProtoDefine.MoveOperation parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static zorg.game_scene.proto.ProtoDefine.MoveOperation parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static zorg.game_scene.proto.ProtoDefine.MoveOperation parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static zorg.game_scene.proto.ProtoDefine.MoveOperation parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static zorg.game_scene.proto.ProtoDefine.MoveOperation parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static zorg.game_scene.proto.ProtoDefine.MoveOperation parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static zorg.game_scene.proto.ProtoDefine.MoveOperation parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static zorg.game_scene.proto.ProtoDefine.MoveOperation parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static zorg.game_scene.proto.ProtoDefine.MoveOperation parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static zorg.game_scene.proto.ProtoDefine.MoveOperation parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(zorg.game_scene.proto.ProtoDefine.MoveOperation prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code zorg.game_scene.proto.MoveOperation}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:zorg.game_scene.proto.MoveOperation)
+        zorg.game_scene.proto.ProtoDefine.MoveOperationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return zorg.game_scene.proto.ProtoDefine.internal_static_zorg_game_scene_proto_MoveOperation_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return zorg.game_scene.proto.ProtoDefine.internal_static_zorg_game_scene_proto_MoveOperation_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                zorg.game_scene.proto.ProtoDefine.MoveOperation.class, zorg.game_scene.proto.ProtoDefine.MoveOperation.Builder.class);
+      }
+
+      // Construct using zorg.game_scene.proto.ProtoDefine.MoveOperation.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        toPosX_ = 0;
+
+        toPosY_ = 0;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return zorg.game_scene.proto.ProtoDefine.internal_static_zorg_game_scene_proto_MoveOperation_descriptor;
+      }
+
+      public zorg.game_scene.proto.ProtoDefine.MoveOperation getDefaultInstanceForType() {
+        return zorg.game_scene.proto.ProtoDefine.MoveOperation.getDefaultInstance();
+      }
+
+      public zorg.game_scene.proto.ProtoDefine.MoveOperation build() {
+        zorg.game_scene.proto.ProtoDefine.MoveOperation result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public zorg.game_scene.proto.ProtoDefine.MoveOperation buildPartial() {
+        zorg.game_scene.proto.ProtoDefine.MoveOperation result = new zorg.game_scene.proto.ProtoDefine.MoveOperation(this);
+        result.toPosX_ = toPosX_;
+        result.toPosY_ = toPosY_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof zorg.game_scene.proto.ProtoDefine.MoveOperation) {
+          return mergeFrom((zorg.game_scene.proto.ProtoDefine.MoveOperation)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(zorg.game_scene.proto.ProtoDefine.MoveOperation other) {
+        if (other == zorg.game_scene.proto.ProtoDefine.MoveOperation.getDefaultInstance()) return this;
+        if (other.getToPosX() != 0) {
+          setToPosX(other.getToPosX());
+        }
+        if (other.getToPosY() != 0) {
+          setToPosY(other.getToPosY());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        zorg.game_scene.proto.ProtoDefine.MoveOperation parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (zorg.game_scene.proto.ProtoDefine.MoveOperation) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int toPosX_ ;
+      /**
+       * <code>optional int32 toPosX = 1;</code>
+       */
+      public int getToPosX() {
+        return toPosX_;
+      }
+      /**
+       * <code>optional int32 toPosX = 1;</code>
+       */
+      public Builder setToPosX(int value) {
+        
+        toPosX_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 toPosX = 1;</code>
+       */
+      public Builder clearToPosX() {
+        
+        toPosX_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int toPosY_ ;
+      /**
+       * <code>optional int32 toPosY = 2;</code>
+       */
+      public int getToPosY() {
+        return toPosY_;
+      }
+      /**
+       * <code>optional int32 toPosY = 2;</code>
+       */
+      public Builder setToPosY(int value) {
+        
+        toPosY_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 toPosY = 2;</code>
+       */
+      public Builder clearToPosY() {
+        
+        toPosY_ = 0;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:zorg.game_scene.proto.MoveOperation)
+    }
+
+    // @@protoc_insertion_point(class_scope:zorg.game_scene.proto.MoveOperation)
+    private static final zorg.game_scene.proto.ProtoDefine.MoveOperation DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new zorg.game_scene.proto.ProtoDefine.MoveOperation();
+    }
+
+    public static zorg.game_scene.proto.ProtoDefine.MoveOperation getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MoveOperation>
+        PARSER = new com.google.protobuf.AbstractParser<MoveOperation>() {
+      public MoveOperation parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        try {
+          return new MoveOperation(input, extensionRegistry);
+        } catch (RuntimeException e) {
+          if (e.getCause() instanceof
+              com.google.protobuf.InvalidProtocolBufferException) {
+            throw (com.google.protobuf.InvalidProtocolBufferException)
+                e.getCause();
+          }
+          throw e;
+        }
+      }
+    };
+
+    public static com.google.protobuf.Parser<MoveOperation> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MoveOperation> getParserForType() {
+      return PARSER;
+    }
+
+    public zorg.game_scene.proto.ProtoDefine.MoveOperation getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface LeaveOperationOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:zorg.game_scene.proto.LeaveOperation)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * Protobuf type {@code zorg.game_scene.proto.LeaveOperation}
+   */
+  public  static final class LeaveOperation extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:zorg.game_scene.proto.LeaveOperation)
+      LeaveOperationOrBuilder {
+    // Use LeaveOperation.newBuilder() to construct.
+    private LeaveOperation(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private LeaveOperation() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private LeaveOperation(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) {
+      this();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw new RuntimeException(e.setUnfinishedMessage(this));
+      } catch (java.io.IOException e) {
+        throw new RuntimeException(
+            new com.google.protobuf.InvalidProtocolBufferException(
+                e.getMessage()).setUnfinishedMessage(this));
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return zorg.game_scene.proto.ProtoDefine.internal_static_zorg_game_scene_proto_LeaveOperation_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return zorg.game_scene.proto.ProtoDefine.internal_static_zorg_game_scene_proto_LeaveOperation_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              zorg.game_scene.proto.ProtoDefine.LeaveOperation.class, zorg.game_scene.proto.ProtoDefine.LeaveOperation.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    public static zorg.game_scene.proto.ProtoDefine.LeaveOperation parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static zorg.game_scene.proto.ProtoDefine.LeaveOperation parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static zorg.game_scene.proto.ProtoDefine.LeaveOperation parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static zorg.game_scene.proto.ProtoDefine.LeaveOperation parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static zorg.game_scene.proto.ProtoDefine.LeaveOperation parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static zorg.game_scene.proto.ProtoDefine.LeaveOperation parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static zorg.game_scene.proto.ProtoDefine.LeaveOperation parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static zorg.game_scene.proto.ProtoDefine.LeaveOperation parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static zorg.game_scene.proto.ProtoDefine.LeaveOperation parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static zorg.game_scene.proto.ProtoDefine.LeaveOperation parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(zorg.game_scene.proto.ProtoDefine.LeaveOperation prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code zorg.game_scene.proto.LeaveOperation}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:zorg.game_scene.proto.LeaveOperation)
+        zorg.game_scene.proto.ProtoDefine.LeaveOperationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return zorg.game_scene.proto.ProtoDefine.internal_static_zorg_game_scene_proto_LeaveOperation_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return zorg.game_scene.proto.ProtoDefine.internal_static_zorg_game_scene_proto_LeaveOperation_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                zorg.game_scene.proto.ProtoDefine.LeaveOperation.class, zorg.game_scene.proto.ProtoDefine.LeaveOperation.Builder.class);
+      }
+
+      // Construct using zorg.game_scene.proto.ProtoDefine.LeaveOperation.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return zorg.game_scene.proto.ProtoDefine.internal_static_zorg_game_scene_proto_LeaveOperation_descriptor;
+      }
+
+      public zorg.game_scene.proto.ProtoDefine.LeaveOperation getDefaultInstanceForType() {
+        return zorg.game_scene.proto.ProtoDefine.LeaveOperation.getDefaultInstance();
+      }
+
+      public zorg.game_scene.proto.ProtoDefine.LeaveOperation build() {
+        zorg.game_scene.proto.ProtoDefine.LeaveOperation result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public zorg.game_scene.proto.ProtoDefine.LeaveOperation buildPartial() {
+        zorg.game_scene.proto.ProtoDefine.LeaveOperation result = new zorg.game_scene.proto.ProtoDefine.LeaveOperation(this);
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof zorg.game_scene.proto.ProtoDefine.LeaveOperation) {
+          return mergeFrom((zorg.game_scene.proto.ProtoDefine.LeaveOperation)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(zorg.game_scene.proto.ProtoDefine.LeaveOperation other) {
+        if (other == zorg.game_scene.proto.ProtoDefine.LeaveOperation.getDefaultInstance()) return this;
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        zorg.game_scene.proto.ProtoDefine.LeaveOperation parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (zorg.game_scene.proto.ProtoDefine.LeaveOperation) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:zorg.game_scene.proto.LeaveOperation)
+    }
+
+    // @@protoc_insertion_point(class_scope:zorg.game_scene.proto.LeaveOperation)
+    private static final zorg.game_scene.proto.ProtoDefine.LeaveOperation DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new zorg.game_scene.proto.ProtoDefine.LeaveOperation();
+    }
+
+    public static zorg.game_scene.proto.ProtoDefine.LeaveOperation getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<LeaveOperation>
+        PARSER = new com.google.protobuf.AbstractParser<LeaveOperation>() {
+      public LeaveOperation parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        try {
+          return new LeaveOperation(input, extensionRegistry);
+        } catch (RuntimeException e) {
+          if (e.getCause() instanceof
+              com.google.protobuf.InvalidProtocolBufferException) {
+            throw (com.google.protobuf.InvalidProtocolBufferException)
+                e.getCause();
+          }
+          throw e;
+        }
+      }
+    };
+
+    public static com.google.protobuf.Parser<LeaveOperation> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<LeaveOperation> getParserForType() {
+      return PARSER;
+    }
+
+    public zorg.game_scene.proto.ProtoDefine.LeaveOperation getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_zorg_game_scene_proto_GamePlayerState_descriptor;
   private static
@@ -1296,6 +2479,21 @@ public final class ProtoDefine {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_zorg_game_scene_proto_SceneState_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_zorg_game_scene_proto_EnterOperation_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_zorg_game_scene_proto_EnterOperation_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_zorg_game_scene_proto_MoveOperation_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_zorg_game_scene_proto_MoveOperation_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_zorg_game_scene_proto_LeaveOperation_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_zorg_game_scene_proto_LeaveOperation_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1309,7 +2507,10 @@ public final class ProtoDefine {
       "to\"\'\n\017GamePlayerState\022\t\n\001x\030\001 \001(\005\022\t\n\001y\030\002 " +
       "\001(\005\"g\n\nSceneState\022<\n\014playerStates\030\001 \003(\0132" +
       "&.zorg.game_scene.proto.GamePlayerState\022" +
-      "\033\n\023disappearingPlayers\030\002 \003(\003b\006proto3"
+      "\033\n\023disappearingPlayers\030\002 \003(\003\"0\n\016EnterOpe" +
+      "ration\022\016\n\006toPosX\030\001 \001(\005\022\016\n\006toPosY\030\002 \001(\005\"/" +
+      "\n\rMoveOperation\022\016\n\006toPosX\030\001 \001(\005\022\016\n\006toPos" +
+      "Y\030\002 \001(\005\"\020\n\016LeaveOperationb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1335,6 +2536,24 @@ public final class ProtoDefine {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_zorg_game_scene_proto_SceneState_descriptor,
         new java.lang.String[] { "PlayerStates", "DisappearingPlayers", });
+    internal_static_zorg_game_scene_proto_EnterOperation_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_zorg_game_scene_proto_EnterOperation_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_zorg_game_scene_proto_EnterOperation_descriptor,
+        new java.lang.String[] { "ToPosX", "ToPosY", });
+    internal_static_zorg_game_scene_proto_MoveOperation_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_zorg_game_scene_proto_MoveOperation_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_zorg_game_scene_proto_MoveOperation_descriptor,
+        new java.lang.String[] { "ToPosX", "ToPosY", });
+    internal_static_zorg_game_scene_proto_LeaveOperation_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_zorg_game_scene_proto_LeaveOperation_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_zorg_game_scene_proto_LeaveOperation_descriptor,
+        new java.lang.String[] { });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
