@@ -5,9 +5,15 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import zorg.game_scene.cmd.CommendExpression;
 import zorg.game_scene.def.Scene;
 import zorg.game_scene.handler.ActionWorker;
+import zorg.game_scene.handler.EnterHandler;
+import zorg.game_scene.handler.LeaveHandler;
+import zorg.game_scene.handler.MoveHandler;
 
 /**
  * 处理传入请求的工人。
@@ -15,9 +21,30 @@ import zorg.game_scene.handler.ActionWorker;
  * @author zhangbo
  *
  */
+@SuppressWarnings({ "rawtypes", "unchecked" })
 public class ActionWorkers {
 
-	protected Map<Class<?>, ActionWorker<?>> registration = new HashMap<>();
+	private final Logger logger = LoggerFactory.getLogger(getClass());
+
+	protected static Map<String, ActionWorker<?>> registration = new HashMap<>();
+
+	/**
+	 * 注册处理类。
+	 * 
+	 * @param cl
+	 *            消息类型
+	 * @param actionWorker
+	 *            处理类
+	 */
+	public static void register(String className, ActionWorker actionWorker) {
+		registration.put(className, actionWorker);
+	}
+
+	static {
+		new EnterHandler();
+		new LeaveHandler();
+		new MoveHandler();
+	}
 
 	/**
 	 * 处理传入请求，返回若干个待执行的取状态指令。
@@ -28,13 +55,20 @@ public class ActionWorkers {
 	 *            场景数据
 	 * @return 待执行的取状态指令。
 	 */
-	@SuppressWarnings({ "rawtypes", "unchecked" })
 	Collection<CommendExpression> doAction(ActionData action, Scene sceneData) {
-		ActionWorker actionWorker = registration.get(action.getMessage().getClass());
+		Collection<CommendExpression> doWorkRet = null;
+		ActionWorker actionWorker = registration.get(action.getMessage().getClass().getName());
 		if (actionWorker != null) {
-			return actionWorker.doWork(action.getServerId(), action.getPlayerId(), action.getMessage(), sceneData);
+			try {
+				doWorkRet = actionWorker.doWork(action.getServerId(), action.getPlayerId(), action.getMessage(), sceneData);
+			} catch (Exception e) {
+				logger.error("", e);
+			}
 		}
-		return new ArrayList<>();
+		if (doWorkRet != null) {
+			return doWorkRet;
+		} else {
+			return new ArrayList<>();
+		}
 	}
-
 }
