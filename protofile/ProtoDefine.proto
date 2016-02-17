@@ -5,6 +5,7 @@ package zorg.game_scene.proto;
 message GamePlayerState {
   int32 x = 1;
   int32 y = 2;
+  bool online = 3;
 }
 
 message SceneState {

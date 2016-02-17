@@ -19,7 +19,7 @@ import zorg.game_scene.proto.ProtoDefine.MoveOperation;
 public class MoveHandler extends ActionWorker<MoveOperation> {
 
 	@Override
-	public Collection<CommendExpression> doWork(long serverId, long playerId, MoveOperation message, Scene sceneData) {
+	public Collection<CommendExpression> doWork(long serverId, long playerId, String sceneUniqId, MoveOperation message, Scene sceneData) {
 		// TODO Auto-generated method stub
 		return null;
 	}

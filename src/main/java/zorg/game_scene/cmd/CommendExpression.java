@@ -18,6 +18,17 @@ public class CommendExpression {
 	/** 发给者类型 */
 	protected SendTargetType receiverType;
 
+	public CommendExpression(VisionTargetType visionType, StateType stateType, SendTargetType receiverType) {
+		super();
+		this.visionType = visionType;
+		this.stateType = stateType;
+		this.receiverType = receiverType;
+	}
+
+	public CommendExpression() {
+		super();
+	}
+
 	public VisionTargetType getVisionType() {
 		return visionType;
 	}

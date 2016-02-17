@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import zorg.game_scene.proto.ProtoDefine.SceneState;
+import zorg.game_scene.util.Polygon2D;
 
 /**
  * 地图格，包含若干个游戏对象。
@@ -19,6 +20,17 @@ public class Tile implements Changable<SceneState, SceneState>, SceneItemContain
 	protected Map<Object, GamePlayer> players = new HashMap<>();
 	/** 消失的影子 */
 	protected List<GamePlayer> disappearing = new ArrayList<>();
+	/** 边界 */
+	protected final Polygon2D polygon;
+
+	public Tile(Polygon2D polygon) {
+		super();
+		this.polygon = polygon;
+	}
+
+	public Polygon2D getPolygon() {
+		return polygon;
+	}
 
 	@Override
 	public SceneState getChangedState() {
@@ -39,9 +51,6 @@ public class Tile implements Changable<SceneState, SceneState>, SceneItemContain
 		SceneState.Builder finalStateBuilder = SceneState.newBuilder();
 		for (GamePlayer child : players.values()) {
 			finalStateBuilder.addPlayerStates(child.getChangedState());
-		}
-		for (GamePlayer gamePlayer : disappearing) {
-			finalStateBuilder.addDisappearingPlayers(gamePlayer.getId());
 		}
 		return finalStateBuilder.build();
 	}
@@ -75,6 +84,18 @@ public class Tile implements Changable<SceneState, SceneState>, SceneItemContain
 
 	public Collection<GamePlayer> getGamePlayers() {
 		return new ArrayList<>(players.values());
+	}
+
+	public GamePlayer removePlayer(String sceneUniqId) {
+		GamePlayer gamePlayer = players.remove(sceneUniqId);
+		if (gamePlayer != null) {
+			disappearing.add(gamePlayer);
+		}
+		return gamePlayer;
+	}
+
+	public void addGamePlayer(GamePlayer p) {
+		players.put(p.getSceneUniqId(), p);
 	}
 
 }

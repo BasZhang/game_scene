@@ -23,7 +23,7 @@ public abstract class ActionWorker<T extends Message> {
 	 *            场景数据
 	 * @return 返回的命令（可以为{@code null}）。
 	 */
-	public abstract Collection<CommendExpression> doWork(long serverId, long playerId, T message, Scene sceneData);
+	public abstract Collection<CommendExpression> doWork(long serverId, long playerId, String sceneUniqId, T message, Scene sceneData);
 
 	/**
 	 * 构造方法内含按泛型参数注册子类。

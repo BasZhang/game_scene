@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import zorg.game_scene.cmd.CommendExpression;
+import zorg.game_scene.def.GamePlayer;
 import zorg.game_scene.def.Scene;
 import zorg.game_scene.handler.ActionWorker;
 import zorg.game_scene.handler.EnterHandler;
@@ -24,7 +25,7 @@ import zorg.game_scene.handler.MoveHandler;
 @SuppressWarnings({ "rawtypes", "unchecked" })
 public class ActionWorkers {
 
-	private final Logger logger = LoggerFactory.getLogger(getClass());
+	private final Logger log = LoggerFactory.getLogger(getClass());
 
 	protected static Map<String, ActionWorker<?>> registration = new HashMap<>();
 
@@ -60,9 +61,11 @@ public class ActionWorkers {
 		ActionWorker actionWorker = registration.get(action.getMessage().getClass().getName());
 		if (actionWorker != null) {
 			try {
-				doWorkRet = actionWorker.doWork(action.getServerId(), action.getPlayerId(), action.getMessage(), sceneData);
+				GamePlayer tp = new GamePlayer();
+				tp.setId(action.getPlayerId());
+				doWorkRet = actionWorker.doWork(action.getServerId(), action.getPlayerId(), tp.getSceneUniqId(), action.getMessage(), sceneData);
 			} catch (Exception e) {
-				logger.error("", e);
+				log.error("", e);
 			}
 		}
 		if (doWorkRet != null) {

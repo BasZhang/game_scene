@@ -21,6 +21,11 @@ public final class ProtoDefine {
      * <code>optional int32 y = 2;</code>
      */
     int getY();
+
+    /**
+     * <code>optional bool online = 3;</code>
+     */
+    boolean getOnline();
   }
   /**
    * Protobuf type {@code zorg.game_scene.proto.GamePlayerState}
@@ -36,6 +41,7 @@ public final class ProtoDefine {
     private GamePlayerState() {
       x_ = 0;
       y_ = 0;
+      online_ = false;
     }
 
     @java.lang.Override
@@ -70,6 +76,11 @@ public final class ProtoDefine {
             case 16: {
 
               y_ = input.readInt32();
+              break;
+            }
+            case 24: {
+
+              online_ = input.readBool();
               break;
             }
           }
@@ -114,6 +125,15 @@ public final class ProtoDefine {
       return y_;
     }
 
+    public static final int ONLINE_FIELD_NUMBER = 3;
+    private boolean online_;
+    /**
+     * <code>optional bool online = 3;</code>
+     */
+    public boolean getOnline() {
+      return online_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -132,6 +152,9 @@ public final class ProtoDefine {
       if (y_ != 0) {
         output.writeInt32(2, y_);
       }
+      if (online_ != false) {
+        output.writeBool(3, online_);
+      }
     }
 
     public int getSerializedSize() {
@@ -146,6 +169,10 @@ public final class ProtoDefine {
       if (y_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(2, y_);
+      }
+      if (online_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, online_);
       }
       memoizedSize = size;
       return size;
@@ -262,6 +289,8 @@ public final class ProtoDefine {
 
         y_ = 0;
 
+        online_ = false;
+
         return this;
       }
 
@@ -286,6 +315,7 @@ public final class ProtoDefine {
         zorg.game_scene.proto.ProtoDefine.GamePlayerState result = new zorg.game_scene.proto.ProtoDefine.GamePlayerState(this);
         result.x_ = x_;
         result.y_ = y_;
+        result.online_ = online_;
         onBuilt();
         return result;
       }
@@ -306,6 +336,9 @@ public final class ProtoDefine {
         }
         if (other.getY() != 0) {
           setY(other.getY());
+        }
+        if (other.getOnline() != false) {
+          setOnline(other.getOnline());
         }
         onChanged();
         return this;
@@ -381,6 +414,32 @@ public final class ProtoDefine {
       public Builder clearY() {
         
         y_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean online_ ;
+      /**
+       * <code>optional bool online = 3;</code>
+       */
+      public boolean getOnline() {
+        return online_;
+      }
+      /**
+       * <code>optional bool online = 3;</code>
+       */
+      public Builder setOnline(boolean value) {
+        
+        online_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool online = 3;</code>
+       */
+      public Builder clearOnline() {
+        
+        online_ = false;
         onChanged();
         return this;
       }
@@ -2504,13 +2563,14 @@ public final class ProtoDefine {
   static {
     java.lang.String[] descriptorData = {
       "\n\021ProtoDefine.proto\022\025zorg.game_scene.pro" +
-      "to\"\'\n\017GamePlayerState\022\t\n\001x\030\001 \001(\005\022\t\n\001y\030\002 " +
-      "\001(\005\"g\n\nSceneState\022<\n\014playerStates\030\001 \003(\0132" +
-      "&.zorg.game_scene.proto.GamePlayerState\022" +
-      "\033\n\023disappearingPlayers\030\002 \003(\003\"0\n\016EnterOpe" +
-      "ration\022\016\n\006toPosX\030\001 \001(\005\022\016\n\006toPosY\030\002 \001(\005\"/" +
-      "\n\rMoveOperation\022\016\n\006toPosX\030\001 \001(\005\022\016\n\006toPos" +
-      "Y\030\002 \001(\005\"\020\n\016LeaveOperationb\006proto3"
+      "to\"7\n\017GamePlayerState\022\t\n\001x\030\001 \001(\005\022\t\n\001y\030\002 " +
+      "\001(\005\022\016\n\006online\030\003 \001(\010\"g\n\nSceneState\022<\n\014pla" +
+      "yerStates\030\001 \003(\0132&.zorg.game_scene.proto." +
+      "GamePlayerState\022\033\n\023disappearingPlayers\030\002" +
+      " \003(\003\"0\n\016EnterOperation\022\016\n\006toPosX\030\001 \001(\005\022\016" +
+      "\n\006toPosY\030\002 \001(\005\"/\n\rMoveOperation\022\016\n\006toPos" +
+      "X\030\001 \001(\005\022\016\n\006toPosY\030\002 \001(\005\"\020\n\016LeaveOperatio" +
+      "nb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2529,7 +2589,7 @@ public final class ProtoDefine {
     internal_static_zorg_game_scene_proto_GamePlayerState_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_zorg_game_scene_proto_GamePlayerState_descriptor,
-        new java.lang.String[] { "X", "Y", });
+        new java.lang.String[] { "X", "Y", "Online", });
     internal_static_zorg_game_scene_proto_SceneState_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_zorg_game_scene_proto_SceneState_fieldAccessorTable = new
