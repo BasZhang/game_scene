@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>zorg</groupId>
-	<artifactId>game_room</artifactId>
+	<artifactId>game_scene</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>game_room</name>
+	<name>game_scene</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
